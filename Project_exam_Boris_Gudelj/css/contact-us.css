@@ -1,0 +1,58 @@
+/*Contact us*/
+
+h1,
+p,
+input,
+textarea,
+button {
+  margin: 25px 0;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/*input labels*/
+
+.userlabel,
+.emaillabel,
+.subjectlabel {
+  top: -5.2em;
+}
+.commentlabel {
+  top: -21.3rem;
+}
+.userlabel,
+.emaillabel,
+.subjectlabel,
+.commentlabel {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+@media (max-width: 769px) {
+  .userlabel,
+  .emaillabel,
+  .subjectlabel {
+    font-size: 18px;
+    top: -6rem;
+  }
+  .commentlabel {
+    top: -18.6rem;
+    font-size: 18px;
+  }
+}
+@media (max-width: 620px) {
+  .userlabel,
+  .emaillabel,
+  .subjectlabel {
+    font-size: 16px;
+    top: -5.8rem;
+  }
+  .commentlabel {
+    top: -16.9rem;
+    font-size: 16px;
+  }
+}

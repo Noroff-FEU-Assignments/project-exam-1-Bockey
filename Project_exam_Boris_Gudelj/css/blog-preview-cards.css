@@ -1,0 +1,80 @@
+/*Blog cards*/
+
+.blog-preview {
+  width: 300px;
+  padding: 25px;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  margin: 5px;
+  max-height: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.blog-preview h3,
+.blog-preview img,
+.blog-preview a,
+.blog-preview p {
+  margin: 5px 0;
+  max-width: 95%;
+}
+.blog-preview h3 {
+  font-size: 24px;
+  max-height: 4rem;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.blog-preview p {
+  font-size: 16px;
+  max-height: 4.8rem;
+  min-height: 4.5rem;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.blog-preview img {
+  width: 95%;
+  height: 150px;
+  object-fit: cover;
+}
+.blog-preview a {
+  padding: 0.5em 1.5em;
+  display: inline-block;
+}
+@media (max-width: 1650px) {
+  /*blog preview cards responsiveness*/
+  .blog-preview {
+    width: 250px;
+    padding: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .blog-preview p {
+    max-height: 3.78rem;
+    min-height: 3.78rem;
+  }
+}
+
+@media (max-width: 620px) {
+  .blog-preview h3 {
+    font-size: 20px;
+    width: 95%;
+    max-height: 3.5rem;
+  }
+  .blog-preview p {
+    width: 95%;
+    max-height: 3.68rem;
+    min-height: 3.68rem;
+  }
+  .blog-preview img {
+    height: 100px;
+  }
+}
+
+@media only screen and (orientation: landscape) and (max-height: 1200px) {
+  .blog-preview p {
+    min-height: 3.78rem;
+    max-height: 3.78rem;
+  }
+  .blog-preview img {
+    height: 100px;
+  }
+}

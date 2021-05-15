@@ -1,0 +1,339 @@
+/*Global*/
+
+.content-container {
+  padding: 0 0vh;
+}
+.oval-button {
+  background-color: #cc2b2b;
+  font-size: 30px;
+  padding: 0.7em 2.3em;
+  border-radius: 30px;
+}
+.oval-button:hover,
+.oval-button:focus {
+  background-color: #fff;
+  color: #000;
+}
+/*First section*/
+main {
+  padding: 0;
+}
+.first-section-background {
+  background: url(/images/landing-background-dark.jpg) center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+}
+.landing-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  padding: 0 25%;
+}
+h1,
+h2,
+.big-paragraph,
+.oval-button {
+  margin: 25px;
+}
+.big-paragraph {
+  font-size: 30px;
+}
+
+/*Second section - Imported content*/
+
+.imported-content {
+  height: 100vh;
+  min-height: 587px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 25%;
+}
+
+/*Carousel*/
+
+.carousel {
+  height: 600px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.carousel-content {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  position: relative;
+}
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 90%;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+
+  /*added for functionality*/
+  opacity: 0;
+  -webkit-transition: opacity 0.6s ease-out;
+  transition: opacity 0.6s ease-out;
+}
+
+/*This is code for moving slides*/
+
+.carousel-open:checked + .carousel-slide {
+  position: static;
+  opacity: 100;
+  display: flex;
+}
+.carousel-control {
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  top: 45%;
+  -webkit-transform: translate(0, -50%);
+  cursor: pointer;
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  z-index: 10;
+}
+.carousel-control.prev {
+  left: 0;
+}
+
+.carousel-control.next {
+  right: 0;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3 {
+  display: block;
+}
+
+.carousel-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  z-index: 10;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.carousel-bullet {
+  color: #aaaaaa;
+  cursor: pointer;
+  display: block;
+  font-size: 6vh;
+}
+
+.carousel-bullet:hover {
+  color: gray;
+}
+
+#carousel-1:checked
+  ~ .control-1
+  ~ .carousel-indicators
+  li:nth-child(1)
+  .carousel-bullet,
+#carousel-2:checked
+  ~ .control-2
+  ~ .carousel-indicators
+  li:nth-child(2)
+  .carousel-bullet,
+#carousel-3:checked
+  ~ .control-3
+  ~ .carousel-indicators
+  li:nth-child(3)
+  .carousel-bullet {
+  color: #cc2b2b;
+}
+.carousel-number-indicators li:nth-child(1),
+.carousel-number-indicators li:nth-child(2),
+.carousel-number-indicators li:nth-child(3) {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 87%;
+  transform: translateX(-50%);
+  font-size: 20px;
+}
+.carousel-button-right {
+  transform: rotate(180deg);
+}
+
+/*Third section - 2nd black section*/
+
+.attention-section {
+  height: 100vh;
+  padding: 0 25%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/*Fourth section - white section with helmet*/
+
+.white-section {
+  height: 110vh;
+  min-height: 587px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 25%;
+}
+
+.white-section img {
+  height: 300px;
+}
+
+/*Media querries*********************************************************/
+
+@media (max-width: 1650px) {
+  /*carousel*/
+  .carousel-slide {
+    height: 80%;
+  }
+  .carousel-control.prev {
+    left: 30%;
+    top: 90%;
+  }
+  .carousel-control.next {
+    right: 30%;
+    top: 90%;
+  }
+  #carousel-1:checked ~ .carousel-number-indicators li:nth-child(1),
+  #carousel-2:checked ~ .carousel-number-indicators li:nth-child(2),
+  #carousel-3:checked ~ .carousel-number-indicators li:nth-child(3) {
+    display: block;
+  }
+  .carousel-control img {
+    height: 30px;
+  }
+  .carousel-indicators {
+    display: none;
+  }
+  .landing-section,
+  .first-section-background,
+  .attention-section {
+    min-height: 555px;
+  }
+  .white-section {
+    min-height: 720px;
+  }
+}
+@media (max-width: 960px) {
+  .big-paragraph {
+    font-size: 25px;
+  }
+  .landing-section,
+  .imported-content,
+  .attention-section,
+  .white-section {
+    padding: 0 20px;
+  }
+  .oval-button {
+    font-size: 20px;
+  }
+  .rectangular-button {
+    font-size: 16px;
+  }
+}
+@media (max-width: 620px) {
+  .big-paragraph {
+    font-size: 18px;
+  }
+  .oval-button {
+    font-size: 20px;
+  }
+  header nav ul li a {
+    font-size: 30px;
+  }
+  .close-menu {
+    font-weight: 400;
+  }
+  /*4th section-white section with helmet*/
+  .white-section {
+    height: 130vh;
+  }
+  .white-section img {
+    max-height: 200px;
+  }
+  /*carousel */
+  .carousel {
+    height: 70%;
+  }
+  .carousel-slide {
+    flex-direction: column;
+    height: 90%;
+  }
+  .blog-preview + .blog-preview {
+    display: none;
+  }
+
+  .carousel-control.prev {
+    left: 30%;
+    top: 100%;
+  }
+  .carousel-control.next {
+    right: 30%;
+    top: 100%;
+  }
+  .carousel-number-indicators li:nth-child(1),
+  .carousel-number-indicators li:nth-child(2),
+  .carousel-number-indicators li:nth-child(3) {
+    top: 98%;
+  }
+}
+@media (max-width: 430px) {
+  .white-section img {
+    height: 100px;
+  }
+}
+@media only screen and (orientation: landscape) and (max-height: 900px) {
+  /*Typography*/
+
+  h1,
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 25px;
+  }
+  p,
+  .big-paragraph,
+  .oval-button {
+    font-size: 20px;
+  }
+  .rectangular-button {
+    font-size: 16px;
+  }
+  .white-section img {
+    height: 200px;
+  }
+}

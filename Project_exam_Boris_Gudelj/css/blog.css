@@ -1,0 +1,171 @@
+h1,
+h2,
+h3,
+p,
+input,
+textarea,
+button {
+  margin: 25px 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 100px;
+}
+.content-container {
+  width: 100%;
+}
+.imported-content {
+  width: 100%;
+}
+/*imported content*/
+
+article img {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+.author,
+h4 {
+  opacity: 0.5;
+  font-style: italic;
+}
+.posted-messages {
+  margin: 100px 0;
+}
+.posted-messages h3 {
+  margin-bottom: 100px;
+}
+.posted-messages p {
+  margin: 15px 0;
+}
+.posted-messages img {
+  width: 60%;
+  max-width: 350px;
+}
+.author {
+  font-size: 40px;
+}
+h4 {
+  font-size: 20px;
+  margin-top: 50px;
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: -75px;
+  width: 100%;
+  height: calc(100% + 75px);
+  z-index: 99;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.915);
+}
+.modal-img {
+  display: none;
+}
+.modal-close {
+  cursor: pointer;
+  position: fixed;
+  display: none;
+  right: 20px;
+  top: 20px;
+  color: #fff;
+  font-size: 40px;
+  padding: 0 5px;
+  background: rgb(102, 101, 101);
+  z-index: 102;
+  font-family: sans-serif;
+}
+.modal-img img {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  height: auto;
+  width: 80%;
+  z-index: 101;
+}
+
+/*input labels*/
+
+.userlabel,
+.emaillabel {
+  top: -5.2em;
+}
+.commentlabel {
+  top: -21.3rem;
+}
+.userlabel,
+.emaillabel,
+.commentlabel {
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+
+/*media querries***********************************/
+
+@media (max-width: 1650px) {
+  article img {
+    height: 400px;
+  }
+}
+@media (max-width: 768px) {
+  .author {
+    font-size: 25px;
+  }
+  .modal-img img {
+    width: 110%;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  .userlabel,
+  .emaillabel {
+    font-size: 18px;
+    top: -6rem;
+  }
+  .commentlabel {
+    top: -18.6rem;
+    font-size: 18px;
+  }
+}
+@media (max-width: 620px) {
+  .author {
+    font-size: 20px;
+  }
+  form {
+    margin-top: 50px;
+  }
+  .posted-messages {
+    margin: 50px 0;
+  }
+  h4 {
+    font-size: 16px;
+    margin-top: 35px;
+  }
+  .posted-messages h3 {
+    margin-bottom: 50px;
+  }
+  .userlabel,
+  .emaillabel {
+    font-size: 16px;
+    top: -5.8rem;
+  }
+  .commentlabel {
+    top: -16.9rem;
+    font-size: 16px;
+  }
+}
+@media (max-width: 500px) {
+  article img {
+    height: 300px;
+  }
+  .modal-close {
+    font-size: 30px;
+  }
+}

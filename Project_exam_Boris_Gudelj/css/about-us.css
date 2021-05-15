@@ -1,0 +1,24 @@
+.content-container {
+  display: flex;
+}
+h1,
+p {
+  margin: 25px 0;
+}
+.motofied-image {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  object-fit: cover;
+}
+
+@media (max-width: 1650px) {
+  .motofied-image {
+    height: 400px;
+  }
+}
+@media (max-width: 500px) {
+  .motofied-image {
+    height: 300px;
+  }
+}
